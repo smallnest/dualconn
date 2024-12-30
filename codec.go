@@ -53,6 +53,36 @@ func EncodeIPPacket(localIP, dstIP string, localPort, remotePort uint16, payload
 	return buf.Bytes(), err
 }
 
+// EncodeUDPPacket encodes a UDP packet with the given parameters.
+func EncodeUDPPacket(localIP, dstIP string, localPort, remotePort uint16, payload []byte,
+	ttl, tos uint8, ipv4Flags layers.IPv4Flag) ([]byte, error) {
+	ip := &layers.IPv4{
+		SrcIP:    net.ParseIP(localIP),
+		DstIP:    net.ParseIP(dstIP),
+		Version:  4,
+		TTL:      ttl,
+		Protocol: layers.IPProtocolUDP,
+		TOS:      tos,
+		Flags:    ipv4Flags,
+	}
+
+	udp := &layers.UDP{
+		SrcPort: layers.UDPPort(localPort),
+		DstPort: layers.UDPPort(remotePort),
+	}
+	udp.SetNetworkLayerForChecksum(ip)
+
+	buf := gopacket.NewSerializeBuffer()
+	opts := gopacket.SerializeOptions{
+		ComputeChecksums: true,
+		FixLengths:       true,
+	}
+
+	err := gopacket.SerializeLayers(buf, opts, udp, gopacket.Payload(payload))
+
+	return buf.Bytes(), err
+}
+
 // EncodePayload encodes the timestamp and sequence number into head of the payload.
 func EncodePayload(ts, seq uint64, payload []byte, payloadType PayloadType) error {
 	if len(payload) < 17 {

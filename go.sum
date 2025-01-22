@@ -4,6 +4,8 @@ github.com/google/gopacket v1.1.19 h1:ves8RnFZPGiFnTS0uPQStjwru6uO6h+nlr9j6fL7kF
 github.com/google/gopacket v1.1.19/go.mod h1:iJ8V8n6KS+z2U1A8pUwu8bW5SyEMkXJB8Yo/Vo+TKTo=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/smallnest/gopacket v0.0.0-20250122103831-8d39ded98d1c h1:r3FXWaQdG8zWy6fyqGqdcv18mUUBOBQ+0dp/t08CDSM=
+github.com/smallnest/gopacket v0.0.0-20250122103831-8d39ded98d1c/go.mod h1:dhbqfGZRcFgDfvfuAdIszcvyY42oi9kEFS7uLgqfBr0=
 github.com/smallnest/qianmo v0.3.1 h1:yZrbjpZK3JNqVZYI8/Cbi/ZX7NmP2BsUdNZHa+xDTlg=
 github.com/smallnest/qianmo v0.3.1/go.mod h1:+9S/2Bbl+LFc6Y47Iyty+FUpQgOlk2oaQMAQ4Vb/q0s=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=

@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
+	"github.com/smallnest/gopacket"
+	"github.com/smallnest/gopacket/layers"
 )
 
 var (

@@ -6,7 +6,7 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/google/gopacket/layers"
+	"github.com/smallnest/gopacket/layers"
 	qbpf "github.com/smallnest/qianmo/bpf"
 	"golang.org/x/net/bpf"
 	"golang.org/x/net/ipv4"
